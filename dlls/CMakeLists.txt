@@ -1,0 +1,2 @@
+add_subdirectory(square_animation)
+add_subdirectory(bezier_creator)

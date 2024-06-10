@@ -3,7 +3,8 @@
 #include <dlfcn.h> // load dll
 #include <iostream>
 
-char libPlugPath[] = "/Users/sejersen/dev/prism/dlls/libplugin.so";
+char* libPlugPath;
+ 
 void *libPlug = nullptr;
 
 bool libPlugReload() {
@@ -38,23 +39,32 @@ bool libPlugReload() {
   return true;
 }
 
-int main() {
-  const int screenWidth = 800;
-  const int screenHeight = 450;
+int main(int argc, char *argv[]) {
+
+  if (argc < 2) {
+    std::cerr << "Usage: " << argv[0] << " <library_path>" << std::endl;
+    return 1;
+  }
+
+  // Extract the library path from command-line argument
+  libPlugPath = argv[1];
+
+  const int screenWidth = 1600;
+  const int screenHeight = 900;
 
   if (!libPlugReload()) {
     return 1;
   }
 
-  InitWindow(screenWidth, screenHeight, "PRISM WINDOW");
+  InitWindow(screenWidth, screenHeight, "PRISM");
   plugInit();
   SetTargetFPS(60);
 
   while (!WindowShouldClose()) {
-    // Hot reloading 
-    if(IsKeyPressed(KEY_R)){
+    // Hot reloading
+    if (IsKeyPressed(KEY_R)) {
       void *state = plugSaveState();
-      if(!libPlugReload()){
+      if (!libPlugReload()) {
         std::cout << "ERROR: Failed to reload libplug" << std::endl;
         return 1;
       }

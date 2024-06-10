@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
+  "/Users/sejersen/dev/prism/bin/prism_engine"
+  "/Users/sejersen/dev/prism/bin/prism_engine.pdb"
+  "CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o"
+  "CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o.d"
   "CMakeFiles/prism_engine.dir/src/main.cpp.o"
   "CMakeFiles/prism_engine.dir/src/main.cpp.o.d"
   "CMakeFiles/prism_engine.dir/src/plug.cpp.o"
   "CMakeFiles/prism_engine.dir/src/plug.cpp.o.d"
-  "prism_engine"
-  "prism_engine.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

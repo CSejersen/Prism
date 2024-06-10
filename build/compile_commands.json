@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/Users/sejersen/dev/prism/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o -c /Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "file": "/Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "output": "CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/prism_engine.dir/src/main.cpp.o -c /Users/sejersen/dev/prism/src/main.cpp",
+  "file": "/Users/sejersen/dev/prism/src/main.cpp",
+  "output": "CMakeFiles/prism_engine.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/prism_engine.dir/src/plug.cpp.o -c /Users/sejersen/dev/prism/src/plug.cpp",
+  "file": "/Users/sejersen/dev/prism/src/plug.cpp",
+  "output": "CMakeFiles/prism_engine.dir/src/plug.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/square_animation",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsquare_animation_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/square_animation.dir/animation.cpp.o -c /Users/sejersen/dev/prism/plugins/square_animation/animation.cpp",
+  "file": "/Users/sejersen/dev/prism/plugins/square_animation/animation.cpp",
+  "output": "plugins/square_animation/CMakeFiles/square_animation.dir/animation.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/square_animation",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsquare_animation_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/square_animation.dir/__/__/utils/step_functions.cpp.o -c /Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "file": "/Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "output": "plugins/square_animation/CMakeFiles/square_animation.dir/__/__/utils/step_functions.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/square_animation",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsquare_animation_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/square_animation.dir/__/__/src/common/ffmpeg.cpp.o -c /Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "file": "/Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "output": "plugins/square_animation/CMakeFiles/square_animation.dir/__/__/src/common/ffmpeg.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/bezier_creator",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dbezier_creator_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/bezier_creator.dir/bezier_creator.cpp.o -c /Users/sejersen/dev/prism/plugins/bezier_creator/bezier_creator.cpp",
+  "file": "/Users/sejersen/dev/prism/plugins/bezier_creator/bezier_creator.cpp",
+  "output": "plugins/bezier_creator/CMakeFiles/bezier_creator.dir/bezier_creator.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/bezier_creator",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dbezier_creator_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/bezier_creator.dir/__/__/utils/step_functions.cpp.o -c /Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "file": "/Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "output": "plugins/bezier_creator/CMakeFiles/bezier_creator.dir/__/__/utils/step_functions.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/bezier_creator",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dbezier_creator_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/bezier_creator.dir/__/__/src/common/ffmpeg.cpp.o -c /Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "file": "/Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "output": "plugins/bezier_creator/CMakeFiles/bezier_creator.dir/__/__/src/common/ffmpeg.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/test",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dtest_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/test.dir/test.cpp.o -c /Users/sejersen/dev/prism/plugins/test/test.cpp",
+  "file": "/Users/sejersen/dev/prism/plugins/test/test.cpp",
+  "output": "plugins/test/CMakeFiles/test.dir/test.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/test",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dtest_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/test.dir/__/__/utils/step_functions.cpp.o -c /Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "file": "/Users/sejersen/dev/prism/utils/step_functions.cpp",
+  "output": "plugins/test/CMakeFiles/test.dir/__/__/utils/step_functions.cpp.o"
+},
+{
+  "directory": "/Users/sejersen/dev/prism/build/plugins/test",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dtest_EXPORTS -I/Users/sejersen/dev/prism/utils -I/Users/sejersen/dev/prism/src -I/Users/sejersen/dev/prism/src/common -isystem /opt/homebrew/Cellar/raylib/5.0/include -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/test.dir/__/__/src/common/ffmpeg.cpp.o -c /Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "file": "/Users/sejersen/dev/prism/src/common/ffmpeg.cpp",
+  "output": "plugins/test/CMakeFiles/test.dir/__/__/src/common/ffmpeg.cpp.o"
+}
+]

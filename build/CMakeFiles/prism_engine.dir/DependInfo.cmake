@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/sejersen/dev/prism/src/common/ffmpeg.cpp" "CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o" "gcc" "CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o.d"
   "/Users/sejersen/dev/prism/src/main.cpp" "CMakeFiles/prism_engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/prism_engine.dir/src/main.cpp.o.d"
   "/Users/sejersen/dev/prism/src/plug.cpp" "CMakeFiles/prism_engine.dir/src/plug.cpp.o" "gcc" "CMakeFiles/prism_engine.dir/src/plug.cpp.o.d"
   )

@@ -11,9 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
-  "/Users/sejersen/dev/prism/dlls/CMakeLists.txt"
-  "/Users/sejersen/dev/prism/dlls/bezier_creator/CMakeLists.txt"
-  "/Users/sejersen/dev/prism/dlls/square_animation/CMakeLists.txt"
+  "/Users/sejersen/dev/prism/plugins/CMakeLists.txt"
+  "/Users/sejersen/dev/prism/plugins/bezier_creator/CMakeLists.txt"
+  "/Users/sejersen/dev/prism/plugins/square_animation/CMakeLists.txt"
+  "/Users/sejersen/dev/prism/plugins/test/CMakeLists.txt"
   "/opt/homebrew/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.28.3/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -51,14 +52,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "dlls/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "dlls/square_animation/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "dlls/bezier_creator/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "plugins/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "plugins/square_animation/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "plugins/bezier_creator/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "plugins/test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/prism_engine.dir/DependInfo.cmake"
-  "dlls/square_animation/CMakeFiles/square_animation.dir/DependInfo.cmake"
-  "dlls/bezier_creator/CMakeFiles/bezier_creator.dir/DependInfo.cmake"
+  "plugins/square_animation/CMakeFiles/square_animation.dir/DependInfo.cmake"
+  "plugins/bezier_creator/CMakeFiles/bezier_creator.dir/DependInfo.cmake"
+  "plugins/test/CMakeFiles/test.dir/DependInfo.cmake"
   )

@@ -139,7 +139,7 @@ square_animation: cmake_check_build_system
 
 # fast build rule for target.
 square_animation/fast:
-	$(MAKE) $(MAKESILENT) -f dlls/square_animation/CMakeFiles/square_animation.dir/build.make dlls/square_animation/CMakeFiles/square_animation.dir/build
+	$(MAKE) $(MAKESILENT) -f plugins/square_animation/CMakeFiles/square_animation.dir/build.make plugins/square_animation/CMakeFiles/square_animation.dir/build
 .PHONY : square_animation/fast
 
 #=============================================================================
@@ -152,8 +152,45 @@ bezier_creator: cmake_check_build_system
 
 # fast build rule for target.
 bezier_creator/fast:
-	$(MAKE) $(MAKESILENT) -f dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build.make dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build
+	$(MAKE) $(MAKESILENT) -f plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build.make plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build
 .PHONY : bezier_creator/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f plugins/test/CMakeFiles/test.dir/build.make plugins/test/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+src/common/ffmpeg.o: src/common/ffmpeg.cpp.o
+.PHONY : src/common/ffmpeg.o
+
+# target to build an object file
+src/common/ffmpeg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prism_engine.dir/build.make CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o
+.PHONY : src/common/ffmpeg.cpp.o
+
+src/common/ffmpeg.i: src/common/ffmpeg.cpp.i
+.PHONY : src/common/ffmpeg.i
+
+# target to preprocess a source file
+src/common/ffmpeg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prism_engine.dir/build.make CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.i
+.PHONY : src/common/ffmpeg.cpp.i
+
+src/common/ffmpeg.s: src/common/ffmpeg.cpp.s
+.PHONY : src/common/ffmpeg.s
+
+# target to generate assembly for a file
+src/common/ffmpeg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prism_engine.dir/build.make CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.s
+.PHONY : src/common/ffmpeg.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -214,6 +251,10 @@ help:
 	@echo "... bezier_creator"
 	@echo "... prism_engine"
 	@echo "... square_animation"
+	@echo "... test"
+	@echo "... src/common/ffmpeg.o"
+	@echo "... src/common/ffmpeg.i"
+	@echo "... src/common/ffmpeg.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

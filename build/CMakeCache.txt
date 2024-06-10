@@ -229,7 +229,7 @@ Prism_IS_TOP_LEVEL:STATIC=ON
 Prism_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism
 
 //Value Computed by CMake
-bezier_creator_BINARY_DIR:STATIC=/Users/sejersen/dev/prism/build/dlls/bezier_creator
+bezier_creator_BINARY_DIR:STATIC=/Users/sejersen/dev/prism/build/plugins/bezier_creator
 
 //Value Computed by CMake
 bezier_creator_IS_TOP_LEVEL:STATIC=OFF
@@ -238,7 +238,7 @@ bezier_creator_IS_TOP_LEVEL:STATIC=OFF
 bezier_creator_LIB_DEPENDS:STATIC=general;raylib;
 
 //Value Computed by CMake
-bezier_creator_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism/dlls/bezier_creator
+bezier_creator_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism/plugins/bezier_creator
 
 //Path to a library.
 pkgcfg_lib_PC_RAYLIB_raylib:FILEPATH=/opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
@@ -253,7 +253,7 @@ raylib_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/raylib/5.0/include
 raylib_LIBRARY:FILEPATH=/opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
 
 //Value Computed by CMake
-square_animation_BINARY_DIR:STATIC=/Users/sejersen/dev/prism/build/dlls/square_animation
+square_animation_BINARY_DIR:STATIC=/Users/sejersen/dev/prism/build/plugins/square_animation
 
 //Value Computed by CMake
 square_animation_IS_TOP_LEVEL:STATIC=OFF
@@ -262,7 +262,19 @@ square_animation_IS_TOP_LEVEL:STATIC=OFF
 square_animation_LIB_DEPENDS:STATIC=general;raylib;
 
 //Value Computed by CMake
-square_animation_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism/dlls/square_animation
+square_animation_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism/plugins/square_animation
+
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=/Users/sejersen/dev/prism/build/plugins/test
+
+//Value Computed by CMake
+test_IS_TOP_LEVEL:STATIC=OFF
+
+//Dependencies for the target
+test_LIB_DEPENDS:STATIC=general;raylib;
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=/Users/sejersen/dev/prism/plugins/test
 
 
 ########################
@@ -363,7 +375,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

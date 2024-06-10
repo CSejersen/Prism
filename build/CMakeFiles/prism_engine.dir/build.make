@@ -69,10 +69,24 @@ include CMakeFiles/prism_engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/prism_engine.dir/flags.make
 
+CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o: CMakeFiles/prism_engine.dir/flags.make
+CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o: /Users/sejersen/dev/prism/src/common/ffmpeg.cpp
+CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o: CMakeFiles/prism_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o -MF CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o.d -o CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o -c /Users/sejersen/dev/prism/src/common/ffmpeg.cpp
+
+CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sejersen/dev/prism/src/common/ffmpeg.cpp > CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.i
+
+CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sejersen/dev/prism/src/common/ffmpeg.cpp -o CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.s
+
 CMakeFiles/prism_engine.dir/src/main.cpp.o: CMakeFiles/prism_engine.dir/flags.make
 CMakeFiles/prism_engine.dir/src/main.cpp.o: /Users/sejersen/dev/prism/src/main.cpp
 CMakeFiles/prism_engine.dir/src/main.cpp.o: CMakeFiles/prism_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/prism_engine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/prism_engine.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/prism_engine.dir/src/main.cpp.o -MF CMakeFiles/prism_engine.dir/src/main.cpp.o.d -o CMakeFiles/prism_engine.dir/src/main.cpp.o -c /Users/sejersen/dev/prism/src/main.cpp
 
 CMakeFiles/prism_engine.dir/src/main.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/prism_engine.dir/src/main.cpp.s: cmake_force
 CMakeFiles/prism_engine.dir/src/plug.cpp.o: CMakeFiles/prism_engine.dir/flags.make
 CMakeFiles/prism_engine.dir/src/plug.cpp.o: /Users/sejersen/dev/prism/src/plug.cpp
 CMakeFiles/prism_engine.dir/src/plug.cpp.o: CMakeFiles/prism_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/prism_engine.dir/src/plug.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prism_engine.dir/src/plug.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/prism_engine.dir/src/plug.cpp.o -MF CMakeFiles/prism_engine.dir/src/plug.cpp.o.d -o CMakeFiles/prism_engine.dir/src/plug.cpp.o -c /Users/sejersen/dev/prism/src/plug.cpp
 
 CMakeFiles/prism_engine.dir/src/plug.cpp.i: cmake_force
@@ -99,22 +113,24 @@ CMakeFiles/prism_engine.dir/src/plug.cpp.s: cmake_force
 
 # Object files for target prism_engine
 prism_engine_OBJECTS = \
+"CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o" \
 "CMakeFiles/prism_engine.dir/src/main.cpp.o" \
 "CMakeFiles/prism_engine.dir/src/plug.cpp.o"
 
 # External object files for target prism_engine
 prism_engine_EXTERNAL_OBJECTS =
 
-prism_engine: CMakeFiles/prism_engine.dir/src/main.cpp.o
-prism_engine: CMakeFiles/prism_engine.dir/src/plug.cpp.o
-prism_engine: CMakeFiles/prism_engine.dir/build.make
-prism_engine: /opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
-prism_engine: CMakeFiles/prism_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable prism_engine"
+/Users/sejersen/dev/prism/bin/prism_engine: CMakeFiles/prism_engine.dir/src/common/ffmpeg.cpp.o
+/Users/sejersen/dev/prism/bin/prism_engine: CMakeFiles/prism_engine.dir/src/main.cpp.o
+/Users/sejersen/dev/prism/bin/prism_engine: CMakeFiles/prism_engine.dir/src/plug.cpp.o
+/Users/sejersen/dev/prism/bin/prism_engine: CMakeFiles/prism_engine.dir/build.make
+/Users/sejersen/dev/prism/bin/prism_engine: /opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
+/Users/sejersen/dev/prism/bin/prism_engine: CMakeFiles/prism_engine.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /Users/sejersen/dev/prism/bin/prism_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prism_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/prism_engine.dir/build: prism_engine
+CMakeFiles/prism_engine.dir/build: /Users/sejersen/dev/prism/bin/prism_engine
 .PHONY : CMakeFiles/prism_engine.dir/build
 
 CMakeFiles/prism_engine.dir/clean:

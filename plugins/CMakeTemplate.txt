@@ -1,0 +1,15 @@
+# Set the project name
+project(PROJECT_NAME)
+
+file(GLOB_RECURSE PLUG_SOURCES "./*.cpp")
+
+# Create the shared library
+add_library(PROJECT_NAME SHARED ${PLUG_SOURCES} ${UTILS} ${COMMON})
+
+# Link Raylib library
+target_link_libraries(PROJECT_NAME PRIVATE raylib)
+
+# Specify the output directory for the lib file
+set_target_properties(PROJECT_NAME PROPERTIES
+LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/plug
+)

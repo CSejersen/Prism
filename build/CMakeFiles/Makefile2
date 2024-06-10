@@ -64,65 +64,83 @@ CMAKE_BINARY_DIR = /Users/sejersen/dev/prism/build
 
 # The main recursive "all" target.
 all: CMakeFiles/prism_engine.dir/all
-all: dlls/all
+all: plugins/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: dlls/preinstall
+preinstall: plugins/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/prism_engine.dir/clean
-clean: dlls/clean
+clean: plugins/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory dlls
+# Directory level rules for directory plugins
 
 # Recursive "all" directory target.
-dlls/all: dlls/square_animation/all
-dlls/all: dlls/bezier_creator/all
-.PHONY : dlls/all
+plugins/all: plugins/square_animation/all
+plugins/all: plugins/bezier_creator/all
+plugins/all: plugins/test/all
+.PHONY : plugins/all
 
 # Recursive "preinstall" directory target.
-dlls/preinstall: dlls/square_animation/preinstall
-dlls/preinstall: dlls/bezier_creator/preinstall
-.PHONY : dlls/preinstall
+plugins/preinstall: plugins/square_animation/preinstall
+plugins/preinstall: plugins/bezier_creator/preinstall
+plugins/preinstall: plugins/test/preinstall
+.PHONY : plugins/preinstall
 
 # Recursive "clean" directory target.
-dlls/clean: dlls/square_animation/clean
-dlls/clean: dlls/bezier_creator/clean
-.PHONY : dlls/clean
+plugins/clean: plugins/square_animation/clean
+plugins/clean: plugins/bezier_creator/clean
+plugins/clean: plugins/test/clean
+.PHONY : plugins/clean
 
 #=============================================================================
-# Directory level rules for directory dlls/bezier_creator
+# Directory level rules for directory plugins/bezier_creator
 
 # Recursive "all" directory target.
-dlls/bezier_creator/all: dlls/bezier_creator/CMakeFiles/bezier_creator.dir/all
-.PHONY : dlls/bezier_creator/all
+plugins/bezier_creator/all: plugins/bezier_creator/CMakeFiles/bezier_creator.dir/all
+.PHONY : plugins/bezier_creator/all
 
 # Recursive "preinstall" directory target.
-dlls/bezier_creator/preinstall:
-.PHONY : dlls/bezier_creator/preinstall
+plugins/bezier_creator/preinstall:
+.PHONY : plugins/bezier_creator/preinstall
 
 # Recursive "clean" directory target.
-dlls/bezier_creator/clean: dlls/bezier_creator/CMakeFiles/bezier_creator.dir/clean
-.PHONY : dlls/bezier_creator/clean
+plugins/bezier_creator/clean: plugins/bezier_creator/CMakeFiles/bezier_creator.dir/clean
+.PHONY : plugins/bezier_creator/clean
 
 #=============================================================================
-# Directory level rules for directory dlls/square_animation
+# Directory level rules for directory plugins/square_animation
 
 # Recursive "all" directory target.
-dlls/square_animation/all: dlls/square_animation/CMakeFiles/square_animation.dir/all
-.PHONY : dlls/square_animation/all
+plugins/square_animation/all: plugins/square_animation/CMakeFiles/square_animation.dir/all
+.PHONY : plugins/square_animation/all
 
 # Recursive "preinstall" directory target.
-dlls/square_animation/preinstall:
-.PHONY : dlls/square_animation/preinstall
+plugins/square_animation/preinstall:
+.PHONY : plugins/square_animation/preinstall
 
 # Recursive "clean" directory target.
-dlls/square_animation/clean: dlls/square_animation/CMakeFiles/square_animation.dir/clean
-.PHONY : dlls/square_animation/clean
+plugins/square_animation/clean: plugins/square_animation/CMakeFiles/square_animation.dir/clean
+.PHONY : plugins/square_animation/clean
+
+#=============================================================================
+# Directory level rules for directory plugins/test
+
+# Recursive "all" directory target.
+plugins/test/all: plugins/test/CMakeFiles/test.dir/all
+.PHONY : plugins/test/all
+
+# Recursive "preinstall" directory target.
+plugins/test/preinstall:
+.PHONY : plugins/test/preinstall
+
+# Recursive "clean" directory target.
+plugins/test/clean: plugins/test/CMakeFiles/test.dir/clean
+.PHONY : plugins/test/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/prism_engine.dir
@@ -131,12 +149,12 @@ dlls/square_animation/clean: dlls/square_animation/CMakeFiles/square_animation.d
 CMakeFiles/prism_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/prism_engine.dir/build.make CMakeFiles/prism_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/prism_engine.dir/build.make CMakeFiles/prism_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=5,6,7 "Built target prism_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=5,6,7,8 "Built target prism_engine"
 .PHONY : CMakeFiles/prism_engine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/prism_engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/prism_engine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 0
 .PHONY : CMakeFiles/prism_engine.dir/rule
@@ -151,56 +169,82 @@ CMakeFiles/prism_engine.dir/clean:
 .PHONY : CMakeFiles/prism_engine.dir/clean
 
 #=============================================================================
-# Target rules for target dlls/square_animation/CMakeFiles/square_animation.dir
+# Target rules for target plugins/square_animation/CMakeFiles/square_animation.dir
 
 # All Build rule for target.
-dlls/square_animation/CMakeFiles/square_animation.dir/all:
-	$(MAKE) $(MAKESILENT) -f dlls/square_animation/CMakeFiles/square_animation.dir/build.make dlls/square_animation/CMakeFiles/square_animation.dir/depend
-	$(MAKE) $(MAKESILENT) -f dlls/square_animation/CMakeFiles/square_animation.dir/build.make dlls/square_animation/CMakeFiles/square_animation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=8,9,10,11 "Built target square_animation"
-.PHONY : dlls/square_animation/CMakeFiles/square_animation.dir/all
+plugins/square_animation/CMakeFiles/square_animation.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugins/square_animation/CMakeFiles/square_animation.dir/build.make plugins/square_animation/CMakeFiles/square_animation.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins/square_animation/CMakeFiles/square_animation.dir/build.make plugins/square_animation/CMakeFiles/square_animation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=9,10,11,12 "Built target square_animation"
+.PHONY : plugins/square_animation/CMakeFiles/square_animation.dir/all
 
 # Build rule for subdir invocation for target.
-dlls/square_animation/CMakeFiles/square_animation.dir/rule: cmake_check_build_system
+plugins/square_animation/CMakeFiles/square_animation.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dlls/square_animation/CMakeFiles/square_animation.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/square_animation/CMakeFiles/square_animation.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 0
-.PHONY : dlls/square_animation/CMakeFiles/square_animation.dir/rule
+.PHONY : plugins/square_animation/CMakeFiles/square_animation.dir/rule
 
 # Convenience name for target.
-square_animation: dlls/square_animation/CMakeFiles/square_animation.dir/rule
+square_animation: plugins/square_animation/CMakeFiles/square_animation.dir/rule
 .PHONY : square_animation
 
 # clean rule for target.
-dlls/square_animation/CMakeFiles/square_animation.dir/clean:
-	$(MAKE) $(MAKESILENT) -f dlls/square_animation/CMakeFiles/square_animation.dir/build.make dlls/square_animation/CMakeFiles/square_animation.dir/clean
-.PHONY : dlls/square_animation/CMakeFiles/square_animation.dir/clean
+plugins/square_animation/CMakeFiles/square_animation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins/square_animation/CMakeFiles/square_animation.dir/build.make plugins/square_animation/CMakeFiles/square_animation.dir/clean
+.PHONY : plugins/square_animation/CMakeFiles/square_animation.dir/clean
 
 #=============================================================================
-# Target rules for target dlls/bezier_creator/CMakeFiles/bezier_creator.dir
+# Target rules for target plugins/bezier_creator/CMakeFiles/bezier_creator.dir
 
 # All Build rule for target.
-dlls/bezier_creator/CMakeFiles/bezier_creator.dir/all:
-	$(MAKE) $(MAKESILENT) -f dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build.make dlls/bezier_creator/CMakeFiles/bezier_creator.dir/depend
-	$(MAKE) $(MAKESILENT) -f dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build.make dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build
+plugins/bezier_creator/CMakeFiles/bezier_creator.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build.make plugins/bezier_creator/CMakeFiles/bezier_creator.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build.make plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=1,2,3,4 "Built target bezier_creator"
-.PHONY : dlls/bezier_creator/CMakeFiles/bezier_creator.dir/all
+.PHONY : plugins/bezier_creator/CMakeFiles/bezier_creator.dir/all
 
 # Build rule for subdir invocation for target.
-dlls/bezier_creator/CMakeFiles/bezier_creator.dir/rule: cmake_check_build_system
+plugins/bezier_creator/CMakeFiles/bezier_creator.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dlls/bezier_creator/CMakeFiles/bezier_creator.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/bezier_creator/CMakeFiles/bezier_creator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 0
-.PHONY : dlls/bezier_creator/CMakeFiles/bezier_creator.dir/rule
+.PHONY : plugins/bezier_creator/CMakeFiles/bezier_creator.dir/rule
 
 # Convenience name for target.
-bezier_creator: dlls/bezier_creator/CMakeFiles/bezier_creator.dir/rule
+bezier_creator: plugins/bezier_creator/CMakeFiles/bezier_creator.dir/rule
 .PHONY : bezier_creator
 
 # clean rule for target.
-dlls/bezier_creator/CMakeFiles/bezier_creator.dir/clean:
-	$(MAKE) $(MAKESILENT) -f dlls/bezier_creator/CMakeFiles/bezier_creator.dir/build.make dlls/bezier_creator/CMakeFiles/bezier_creator.dir/clean
-.PHONY : dlls/bezier_creator/CMakeFiles/bezier_creator.dir/clean
+plugins/bezier_creator/CMakeFiles/bezier_creator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins/bezier_creator/CMakeFiles/bezier_creator.dir/build.make plugins/bezier_creator/CMakeFiles/bezier_creator.dir/clean
+.PHONY : plugins/bezier_creator/CMakeFiles/bezier_creator.dir/clean
+
+#=============================================================================
+# Target rules for target plugins/test/CMakeFiles/test.dir
+
+# All Build rule for target.
+plugins/test/CMakeFiles/test.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugins/test/CMakeFiles/test.dir/build.make plugins/test/CMakeFiles/test.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins/test/CMakeFiles/test.dir/build.make plugins/test/CMakeFiles/test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sejersen/dev/prism/build/CMakeFiles --progress-num=13,14,15,16 "Built target test"
+.PHONY : plugins/test/CMakeFiles/test.dir/all
+
+# Build rule for subdir invocation for target.
+plugins/test/CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/test/CMakeFiles/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sejersen/dev/prism/build/CMakeFiles 0
+.PHONY : plugins/test/CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: plugins/test/CMakeFiles/test.dir/rule
+.PHONY : test
+
+# clean rule for target.
+plugins/test/CMakeFiles/test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins/test/CMakeFiles/test.dir/build.make plugins/test/CMakeFiles/test.dir/clean
+.PHONY : plugins/test/CMakeFiles/test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

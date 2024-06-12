@@ -1,39 +1,36 @@
-#include "ffmpeg.h"
-#include "step_functions.h"
-#include "raylib.h"
 #include <iostream>
+#include "raylib.h"
+#include "step_functions.h"
+#include "env.h"
 
 extern "C" {
 
-const float RenderWidth = 1600;
-const float RenderHeight = 900;
-const float RenderFPS = 30;
-const float RenderDeltaT = 1 / RenderFPS;
-const float SquareMoveTime = 2;
 const float SquareWaitTime = 0.3;
-const float SquareWidth = 100;
-const float SquareHeight = 100;
+const float SquareWidth = 70;
+const float SquareHeight = 70;
+const Color SquareColor = BLUE;
+const float SquarePadding = SquareWidth * 0.05;
 
-enum SquareState {
-  SQ_forwards = 0,
-  SQ_waiting1,
-  SQ_backwards,
-  SQ_waiting2,
+float SquareMoveTime = 1;
+
+enum SquarePos {
+  TOP_LEFT,
+  TOP_RIGHT,
+  BOTTOM_RIGHT,
+  BOTTOM_LEFT,
 };
 
 struct Square {
-  SquareState s;
+  SquarePos to;
   float t;
 };
 
 class PlugState {
 public:
-  ffmpeg *ffmpeg;
-  RenderTexture2D screen;
-  float renderDuration;
-
   Color background;
-  float t;
+
+  Square squares[4];
+  int nRotations;
 };
 
 static PlugState *p = nullptr;
@@ -42,27 +39,21 @@ void loadResources() {}
 
 void unloadResources() {}
 
-void squareRotation(float dt, int screenWidth, int screenHeight) {
-  CubicBezier b({0.00, 0.00}, {0.78, 0.00}, {0.23, 1.00}, {1.00, 1.00});
-  ClearBackground(p->background);
-  p->t = (p->t * SquareMoveTime + dt) / SquareMoveTime;
-  if(p->t > 1){
-    p->t = 0;
-  }
+void toggleSpeed() { SquareMoveTime = SquareMoveTime == 1 ? 0.5 : 1; }
 
-  float t = cubicBezierStep(b, p->t); 
-  DrawRectangle(screenWidth * 0.1 + (0.8 * (screenWidth - SquareWidth)) * t, screenHeight*0.5 - SquareHeight*0.5, SquareWidth, SquareHeight, RED);
+void squareRotation(float dt, float screenWidth, float screenHeight) {
 }
 
 void plugInit() {
   p = new PlugState();
 
-  p->ffmpeg = nullptr;
-  p->screen = LoadRenderTexture(RenderWidth, RenderHeight);
-  p->renderDuration = 0;
-
   p->background = GetColor(0x181818FF);
-  p->t = 0;
+  p->squares[0].to = TOP_RIGHT;
+  p->squares[1].to = BOTTOM_RIGHT;
+  p->squares[2].to = BOTTOM_LEFT;
+  p->squares[3].to = TOP_LEFT;
+
+  p->nRotations = 0;
 
   std::cout << "-------------------" << std::endl;
   std::cout << "Initialized Plugin!" << std::endl;
@@ -80,43 +71,85 @@ void plugLoadState(void *state) {
 }
 
 // gets called every frame
-void plugUpdate() {
-  BeginDrawing();
+void plugUpdate(Env* env) {
+  /* DrawRectangle(0,0,100,100,RED); */
+  CubicBezier b({0.000, 0.000}, {0.500, 0.000}, {0.500, 1.000}, {1.000, 1.000});
+  CubicBezier sizeB({0.000, 1.000}, {0.387, 0.855}, {0.612, 0.859},
+                    {1.000, 1.000});
 
-  // RENDERING MODE
-  if (p->ffmpeg) {
-    TraceLog(LOG_INFO, "RENDERING MODE");
-    SetTraceLogLevel(LOG_WARNING);
-    // Stop rendering if duration is reached
-    if (p->renderDuration >= 10) {
-      p->ffmpeg->endRendering();
-      delete p->ffmpeg;
-      p->ffmpeg = nullptr;
-    } else { // Render a frame and send to ffmpeg proc
-      BeginTextureMode(p->screen);
-      squareRotation(RenderDeltaT, RenderWidth, RenderHeight);
-      p->renderDuration += RenderDeltaT;
-      EndTextureMode();
+  ClearBackground(p->background);
 
-      Image image = LoadImageFromTexture(p->screen.texture);
-
-      if (!p->ffmpeg->sendFrameFlipped(image.data, image.width, image.height)) {
-        p->ffmpeg->endRendering();
-        delete p->ffmpeg;
-        p->ffmpeg = nullptr;
+  for (Square &sq : p->squares) {
+    sq.t = ((sq.t * SquareMoveTime) + env->getDeltaT()) / SquareMoveTime;
+    float t = cubicBezierStep(b, sq.t);
+    float sizeT = cubicBezierStep(sizeB, sq.t);
+    switch (sq.to) {
+    case TOP_RIGHT: {
+      float posX = (env->getScreenWidth() / 2 - SquareWidth - SquarePadding / 2) +
+                   (t * ((2 * SquareWidth) + SquarePadding));
+      float posY = (env->getScreenHeight() / 2) - SquareHeight - (SquarePadding / 2);
+      DrawRectangle(posX, posY, SquareWidth * sizeT, SquareHeight * sizeT,
+                    SquareColor);
+      if (sq.t >= 1) {
+        sq.to = BOTTOM_RIGHT;
+        sq.t = 0;
+        p->nRotations++;
+        p->nRotations = p->nRotations % 3;
+        if (p->nRotations == 0) {
+          toggleSpeed();
+        }
       }
-      UnloadImage(image);
+      break;
     }
 
-    // PREVIEW MODE
-  } else {
-    if (IsKeyPressed(KEY_M)) {
-      p->renderDuration = 0;
-      p->ffmpeg = ffmpeg::startRendering(RenderWidth, RenderHeight, RenderFPS);
-    } else {
-      squareRotation(GetFrameTime(), GetScreenWidth(), GetScreenHeight());
+    case BOTTOM_RIGHT: {
+      float posX = env->getScreenWidth() / 2 + SquareWidth + (SquarePadding / 2);
+
+      float posY = (env->getScreenHeight() / 2) - SquareHeight - (SquarePadding / 2) +
+                   t * ((2 * SquareHeight) + SquarePadding);
+
+      DrawRectangle(posX, posY, SquareWidth * sizeT, SquareHeight * sizeT,
+                    SquareColor);
+      if (sq.t >= 1) {
+        sq.to = BOTTOM_LEFT;
+        sq.t = 0;
+      }
+      break;
+    }
+
+    case BOTTOM_LEFT: {
+      float posX = (env->getScreenWidth() / 2 + SquareWidth + (SquarePadding / 2)) -
+                   t * ((2 * SquareWidth) + SquarePadding);
+      float posY = (env->getScreenHeight() / 2) + SquareHeight + (SquarePadding / 2);
+      DrawRectangle(posX, posY, SquareWidth * sizeT, SquareHeight * sizeT,
+                    SquareColor);
+      if (sq.t >= 1) {
+        sq.to = TOP_LEFT;
+        sq.t = 0;
+      }
+      break;
+    }
+    case TOP_LEFT:
+      float posX = env->getScreenWidth() / 2 - SquareWidth - (SquarePadding / 2);
+
+      float posY = ((env->getScreenHeight() / 2) + SquareHeight + (SquarePadding / 2)) -
+                   t * ((2 * SquareHeight) + SquarePadding);
+
+      DrawRectangle(posX, posY, SquareWidth * sizeT, SquareHeight * sizeT,
+                    SquareColor);
+      if (sq.t >= 1) {
+        sq.to = TOP_RIGHT;
+        sq.t = 0;
+      }
+      break;
     }
   }
-  EndDrawing();
+}
+
+bool plugFinished() { 
+  if(p->nRotations > 6){
+    return true;
+  }
+  return false;
 }
 }

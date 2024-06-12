@@ -1,3 +1,4 @@
 *.mp4
-build/*
+build/
 .DS_Store
+bin/

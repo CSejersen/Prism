@@ -14,6 +14,7 @@ const float RenderFPS = 30;
 const float RenderWidth = 1920;
 const float RenderHeight = 1080;
 RenderTexture2D screen;
+bool needToReset = true;
 
 char *libPlugPath;
 struct stat fileInfo;
@@ -43,6 +44,7 @@ bool libPlugReload() {
   plugLoadState = (void (*)(void *))dlsym(libPlug, "plugLoadState");
   plugUpdate = (void (*)(Env *))dlsym(libPlug, "plugUpdate");
   plugFinished = (bool (*)())dlsym(libPlug, "plugFinished");
+  plugReset = (void (*)())dlsym(libPlug, "plugReset");
 
   // Check for errors
   char *error;
@@ -87,6 +89,7 @@ void stopRendering(Env *env) {
   delete ffmpeg;
   ffmpeg = nullptr;
   env->setRendering(false);
+  needToReset = true;
   SetTraceLogLevel(LOG_INFO);
 }
 
@@ -98,7 +101,7 @@ int main(int argc, char *argv[]) {
   SetTargetFPS(60);
 
   while (!WindowShouldClose()) {
-    // TODO: move hot reloading to it's own thread
+    // TODO: move auto hot reloading to it's own thread
     if (stat(libPlugPath, &fileInfo) != 0) {
       std::cerr << "Error: Unable to stat " << libPlugPath << std::endl;
       exit(1);
@@ -117,13 +120,21 @@ int main(int argc, char *argv[]) {
     if (IsKeyPressed(KEY_R)) {
       env->setScreenWidth(RenderWidth);
       env->setScreenHeight(RenderHeight);
-      env->setDeltaT(1 / RenderFPS);
+      env->setDeltaT(1.0 / RenderFPS);
       env->setRendering(true);
       ffmpeg = ffmpeg::startRendering(env->getScreenWidth(),
                                       env->getScreenHeight(), RenderFPS);
     }
 
+    if (IsKeyPressed(KEY_ENTER)){
+      plugReset();
+    }
+
     if (env->isRendering()) {
+      if (needToReset) {
+        plugReset();
+        needToReset = false;
+      }
       TraceLog(LOG_INFO, "RENDERING MODE");
       SetTraceLogLevel(LOG_WARNING);
       if (plugFinished()) {
@@ -145,7 +156,14 @@ int main(int argc, char *argv[]) {
     } else { // Preview mode
       env->setScreenWidth(GetScreenWidth());
       env->setScreenHeight(GetScreenHeight());
-      env->setDeltaT(GetFrameTime());
+
+      if (env->firstUpdate) {
+        env->setDeltaT(0.016);
+        env->firstUpdate = false;
+      } else {
+        env->setDeltaT(GetFrameTime());
+      }
+
       BeginDrawing();
       plugUpdate(env);
       EndDrawing();
@@ -153,6 +171,7 @@ int main(int argc, char *argv[]) {
   }
 
   CloseWindow();
+  delete env;
 
   return 0;
 }

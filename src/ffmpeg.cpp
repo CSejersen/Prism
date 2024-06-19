@@ -38,18 +38,6 @@ ffmpeg *ffmpeg::startRendering(std::size_t width, std::size_t height,
 
   if (child == 0) {
 
-    /* // Redirect stdout and stderr to /dev/null */
-    /* int devNull = open("/dev/null", O_WRONLY); */
-    /* if (devNull == -1) { */
-    /*   TraceLog(LOG_ERROR, "ffmpeg: Could not open /dev/null: %s", */
-    /*            strerror(errno)); */
-    /*   exit(1); */
-    /* } */
-
-    /* dup2(devNull, STDOUT_FILENO); */
-    /* dup2(devNull, STDERR_FILENO); */
-    /* close(devNull); */
-
     char resolution[64];
     snprintf(resolution, sizeof(resolution), "%zux%zu", width, height);
     char framerate[64];

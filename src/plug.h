@@ -3,11 +3,11 @@
 
 #include "env.h"
 
-extern void(*plugInit)();
-extern void*(*plugSaveState)();
-extern void(*plugLoadState)(void*);
-extern void(*plugUpdate)(Env*);
-extern bool(*plugFinished)();
+extern void (*plugInit)();
+extern void *(*plugSaveState)();
+extern void (*plugLoadState)(void *);
+extern void (*plugUpdate)(Env *);
+extern void (*plugReset)();
+extern bool (*plugFinished)();
 
 #endif // PLUG_H
-

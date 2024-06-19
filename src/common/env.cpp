@@ -4,6 +4,7 @@ Env::Env() {
   rendering = false;
   screenWidth = 1600;
   screenHeight = 900;
+  firstUpdate = true;
 }
 
 // GETTERS

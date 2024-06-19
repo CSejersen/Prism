@@ -15,6 +15,8 @@ public:
   void setDeltaT(float);
   void setRendering(bool);
 
+  bool firstUpdate;
+
 private:
   float screenWidth;
   float screenHeight;

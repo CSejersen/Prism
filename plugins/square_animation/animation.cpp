@@ -39,6 +39,7 @@ void loadResources() {}
 
 void unloadResources() {}
 
+void plugReset(){ }
 void toggleSpeed() { SquareMoveTime = SquareMoveTime == 1 ? 0.5 : 1; }
 
 void squareRotation(float dt, float screenWidth, float screenHeight) {
